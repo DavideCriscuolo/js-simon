@@ -7,3 +7,12 @@ NOTA: non è importante l'ordine con cui l'utente inserisce i numeri, basta che 
 BONUS:
 Inseriamo la validazione: se l'utente mette due numeri uguali o inserisce cose diverse da numeri lo blocchiamo in qualche modo.
 Se l’utente ha inserito qualcosa di non valido, segnaliamolo visivamente nel form.*/
+
+//
+
+for (let i = 1; i <= 5; i++) {
+  function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
+  console.log(getRndInteger(1, 100));
+}
