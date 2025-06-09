@@ -15,9 +15,12 @@ const numbTwoEl = document.querySelector(".numbTwo");
 const numbThreeEl = document.querySelector(".numbThree");
 const numbFourEl = document.querySelector(".numbFour");
 const numbFiveEl = document.querySelector(".numbFive");
-const btnEl = document.querySelector(".btn");
-const rowEl = document.querySelector(".row");
+const btnEl = document.querySelector("#btnGen");
+const rowEl = document.querySelector("#rowFirst");
 const viewInputNumbEl = document.querySelector("#inputNumb");
+const viewTitleCard = document.querySelector(".card-title");
+const viewTextCard = document.querySelector("#cardText");
+const viewCardResult = document.querySelector("#cardResult");
 const inputNumberOne = document.querySelector("#numberOne");
 const inputNumberTwo = document.querySelector("#numberTwo");
 const inputNumberThree = document.querySelector("#numberThree");
@@ -40,7 +43,7 @@ btnEl.addEventListener("click", function (e) {
   setTimeout(function () {
     rowEl.classList.add("d-none");
     viewInputNumbEl.classList.remove("d-none");
-    viewInputNumbEl.classList.add("d-flex");
+    viewInputNumbEl.classList.add("d-block");
   }, 2000);
 
   numbOneEl.innerText = numbGen[0];
@@ -61,14 +64,6 @@ btnEl.addEventListener("click", function (e) {
       Number(inputNumberFive.value),
     ];
 
-    for (let i = 0; i < numbGen.length; i++) {
-      if (numbGen.includes(inputNumbres[i])) {
-        console.log("object");
-      } else {
-        console.log("no");
-      }
-    }
-
     let numEquals = [];
 
     for (let i = 0; i < inputNumbres.length; i++) {
@@ -76,11 +71,21 @@ btnEl.addEventListener("click", function (e) {
 
       if (numbGen.includes(number) && !numEquals.includes(number)) {
         numEquals.push(number); // aggiungi solo una volta
+      } else if (numEquals === 0) {
+        console.log("non");
       }
     }
+    viewCardResult.classList.remove("d-none");
+    viewCardResult.classList.add("d-block");
+    for (let i = 0; i < numbGen.length; i++) {
+      if (numbGen.includes(inputNumbres[i])) {
+        viewTitleCard.innerHTML = `Congratulazioni hai indovinato ${numEquals.length} numeri. `;
 
-    console.log("Hai indovinato:", numEquals.length, "numeri.");
-    console.log("Numeri indovinati:", numEquals);
+        viewTextCard.innerText = `Numeri indovinati: ${numEquals}`;
+      } else {
+        viewTitleCard.innerHTML = "Mi spiace nessun numero indovinato";
+      }
+    }
 
     e.preventDefault();
   });

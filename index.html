@@ -14,39 +14,40 @@
 
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col">
+        <h1>Memory</h1>
+        <div id="rowFirst" class="row">
+            <div class="col my-3">
                 <div class="card">
                     <div class="card-body">
-                        <span class="card-text numbOne">Number</span>
+                        <span class="card-text numbOne">Number 1</span>
                     </div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col my-3">
                 <div class="card">
                     <div class="card-body">
-                        <span class="card-text numbTwo">Number</span>
+                        <span class="card-text numbTwo">Number 2</span>
                     </div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col my-3">
                 <div class="card">
                     <div class="card-body">
-                        <span class="card-text numbThree">Number</span>
+                        <span class="card-text numbThree">Number 3</span>
                     </div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col my-3">
                 <div class="card">
                     <div class="card-body">
-                        <span class="card-text numbFour">Number</span>
+                        <span class="card-text numbFour">Number 4</span>
                     </div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col my-3">
                 <div class="card">
                     <div class="card-body">
-                        <span class="card-text numbFive">Number</span>
+                        <span class="card-text numbFive">Number 5</span>
                     </div>
                 </div>
             </div>
@@ -57,26 +58,36 @@
             <div id="inputNumb" class="mb-3 d-none ">
                 <label for="" class="form-label">Number 1</label>
                 <input type="number" class="form-control" name="numberOne" id="numberOne" aria-describedby="helpId"
-                    placeholder="Inserisci il primo numero" />
-                <label for="" class="form-label">Number 1</label>
+                    placeholder="Inserisci il secondo numero" />
+                <label for="" class="form-label">Number 2</label>
                 <input type="number" class="form-control" name="numberTwo" id="numberTwo" aria-describedby="helpId"
-                    placeholder="Inserisci il primo numero" />
-                <label for="" class="form-label">Number 1</label>
+                    placeholder="Inserisci il terzo numero" />
+                <label for="" class="form-label">Number 3</label>
                 <input type="number" class="form-control" name="numberThree" id="numberThree" aria-describedby="helpId"
-                    placeholder="Inserisci il primo numero" />
-                <label for="" class="form-label">Number 1</label>
+                    placeholder="Inserisci il quarto numero" />
+                <label for="" class="form-label">Number 4</label>
                 <input type="number" class="form-control" name="numberFour" id="numberFour" aria-describedby="helpId"
-                    placeholder="Inserisci il primo numero" />
-                <label for="" class="form-label">Number 1</label>
+                    placeholder="Inserisci il quinto numero" />
+                <label for="" class="form-label">Number 5</label>
                 <input type="number" class="form-control" name="numberFive" id="numberFive" aria-describedby="helpId"
-                    placeholder="Inserisci il primo numero" />
+                    placeholder="Inserisci il primo quinto" />
             </div>
-            <button id="btnInput" type="submit">Convalida</button>
-            <button type="reset"></button>
+            <div class="d-flex justify-content-between">
+                <button id="btnInput" type="submit" class=" btn btn-success my-3">Convalida</button>
+                <button type="reset" class="btn btn-warning my-3">Resetta i campi </button>
         </form>
-
-        <button type="button" class=" btn btn-primary"> Genera
+        <button id="btnGen" type="button" class=" btn btn-primary my-3 "> Genera
         </button>
+    </div>
+
+    <div id="cardResult" class="card text-center d-none">
+        <img class="card-img-top" src="" />
+        <div class="card-body">
+            <h4 class="card-title"></h4>
+            <span id="cardText" class="card-text"></span>
+        </div>
+    </div>
+
 
 
 
