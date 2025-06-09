@@ -10,9 +10,34 @@ Se l’utente ha inserito qualcosa di non valido, segnaliamolo visivamente nel f
 
 //
 
-for (let i = 1; i <= 5; i++) {
-  function getRndInteger(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
+const numbOneEl = document.querySelector(".numbOne");
+const numbTwoEl = document.querySelector(".numbTwo");
+const numbThreeEl = document.querySelector(".numbThree");
+const numbFourEl = document.querySelector(".numbFour");
+const numbFiveEl = document.querySelector(".numbFive");
+const btnEl = document.querySelector(".btn");
+const rowEl = document.querySelector(".row");
+const inputNumbEl = document.querySelector("#inputNumb");
+
+btnEl.addEventListener("click", function (e) {
+  let numbGen = [];
+  for (let i = 1; i <= 5; i++) {
+    function getRndInteger(min, max) {
+      return Math.floor(Math.random() * (max - min)) + min;
+    }
+    numbGen.push(getRndInteger(1, 100));
   }
-  console.log(getRndInteger(1, 100));
-}
+  console.log(numbGen);
+  e.preventDefault();
+  setTimeout(function () {
+    rowEl.classList.add("d-none");
+    inputNumbEl.classList.remove("d-none");
+    inputNumbEl.classList.add("d-flex");
+  }, 1000);
+
+  numbOneEl.innerText = numbGen[0];
+  numbTwoEl.innerText = numbGen[1];
+  numbThreeEl.innerText = numbGen[2];
+  numbFourEl.innerText = numbGen[3];
+  numbFiveEl.innerText = numbGen[4];
+});
