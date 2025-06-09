@@ -60,7 +60,7 @@ btnEl.addEventListener("click", function (e) {
       Number(inputNumberFour.value),
       Number(inputNumberFive.value),
     ];
-    let numbequals = 0;
+
     for (let i = 0; i < numbGen.length; i++) {
       if (numbGen.includes(inputNumbres[i])) {
         console.log("object");
@@ -69,8 +69,19 @@ btnEl.addEventListener("click", function (e) {
       }
     }
 
+    let numEquals = [];
+
+    for (let i = 0; i < inputNumbres.length; i++) {
+      let number = inputNumbres[i];
+
+      if (numbGen.includes(number) && !numEquals.includes(number)) {
+        numEquals.push(number); // aggiungi solo una volta
+      }
+    }
+
+    console.log("Hai indovinato:", numEquals.length, "numeri.");
+    console.log("Numeri indovinati:", numEquals);
+
     e.preventDefault();
-    console.log(e);
-    console.log(inputNumbres);
   });
 });
