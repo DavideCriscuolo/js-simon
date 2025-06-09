@@ -40,4 +40,7 @@ btnEl.addEventListener("click", function (e) {
   numbThreeEl.innerText = numbGen[2];
   numbFourEl.innerText = numbGen[3];
   numbFiveEl.innerText = numbGen[4];
+
+  //vorrei aggiungere un altra arry per i numeri che immette lìutente in modo tale da conftontarli
+  //oppure potrei optare per il confronto singolo e quindi creare delle condizione dove almeno 2 3 numeri se sono uguali ha vinto
 });
