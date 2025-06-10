@@ -44,7 +44,7 @@ btnEl.addEventListener("click", function (e) {
     rowEl.classList.add("d-none");
     viewInputNumbEl.classList.remove("d-none");
     viewInputNumbEl.classList.add("d-block");
-  }, 2000);
+  }, 3000);
 
   numbOneEl.innerText = numbGen[0];
   numbTwoEl.innerText = numbGen[1];
